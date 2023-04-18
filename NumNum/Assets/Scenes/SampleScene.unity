@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boardData: {fileID: 11400000, guid: 6924066e3ad97064c946bd1f6007be0a, type: 2}
   _tilePrefab: {fileID: 1998543960288754134, guid: 433f75adf67a34748b5c21f863c6075b, type: 3}
+  _bricksPilePrefab: {fileID: 4511717989562110838, guid: d6b94b70b2ce7544e902b398ab0651e2, type: 3}
   tilesOffset: 0.1
   _wallsPadding: 0.1
 --- !u!4 &28695614
@@ -257,7 +258,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -265,7 +266,7 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
+    m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05

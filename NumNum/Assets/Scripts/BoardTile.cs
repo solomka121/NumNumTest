@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class BoardTile : MonoBehaviour
 {
-    public BricksStack bricks;
-    public bool isEmpty;
+    public BricksPile bricks;
+    public bool isEmpty = true;
     
     public Vector2Int positionOnGrid;
     
     public void SetIndexes(Vector2Int indexes)
     {
+        isEmpty = true;
         positionOnGrid = indexes;
     }
 

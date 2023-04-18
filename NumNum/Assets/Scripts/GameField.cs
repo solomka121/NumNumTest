@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class GameField : MonoBehaviour
 {
     [SerializeField] private BoardData _boardData;
     [SerializeField] private BoardTile _tilePrefab;
+    [SerializeField] private BricksPile _bricksPilePrefab;
     
     [SerializeField] private float tilesOffset;
     [SerializeField] private float _wallsPadding = 1;
@@ -16,6 +18,9 @@ public class GameField : MonoBehaviour
     {
         Grid = new BoardTile[_boardData.Columns, _boardData.Rows];
         SpawnGrid();
+        Grid[2, 2].bricks = Instantiate(_bricksPilePrefab , Grid[2, 2].transform);
+        Grid[2, 2].isEmpty = false;
+        Grid[2, 2].bricks.Init();
     }
 
     private void SpawnGrid()
@@ -26,18 +31,18 @@ public class GameField : MonoBehaviour
             
             Vector3 FieldSize = GetFieldSize(TileSize);
             
-            Vector3 firstTilePosition = new Vector3(-FieldSize.x / 2 , 0 , FieldSize.z / 2);
+            Vector3 firstTilePosition = new Vector3(FieldSize.x / 2 , 0 , FieldSize.z / 2);
 
-            Vector3 currentPosition = firstTilePosition;
+            Vector3 currentPosition = -firstTilePosition;
 
-            for (int x = 0; x < _boardData.Columns; x++)
+            for (int z = 0; z < _boardData.Rows; z++)
             {
-                currentPosition.x += TileSize.x / 2;
-                currentPosition.z = firstTilePosition.z;
+                currentPosition.z += TileSize.z / 2;
+                currentPosition.x = -firstTilePosition.x;
                 
-                for (int z = 0; z < _boardData.Rows; z++)
+                for (int x = 0; x < _boardData.Columns; x++)
                 {
-                    currentPosition.z -= TileSize.z / 2;
+                    currentPosition.x += TileSize.x / 2;
                     
                     BoardTile tile = Instantiate(_tilePrefab , transform);
                     tile.SetIndexes(new Vector2Int(x, z));
@@ -49,9 +54,9 @@ public class GameField : MonoBehaviour
                     Grid[x, z] = tile;
                     // bricks.PositionOnGird = new Vector2Int(x , y);
                     
-                    currentPosition.z -= TileSize.z / 2 + tilesOffset;
+                    currentPosition.x += TileSize.x / 2 + tilesOffset;
                 }
-                currentPosition.x += TileSize.x / 2 + tilesOffset;
+                currentPosition.z += TileSize.z / 2 + tilesOffset;
             }
         }
     }
