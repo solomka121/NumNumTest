@@ -12,7 +12,7 @@ public class GameField : MonoBehaviour
     
     public BoardTile[,] Grid;
 
-    void Start()
+    public void Init()
     {
         Grid = new BoardTile[_boardData.Columns, _boardData.Rows];
         SpawnGrid();
