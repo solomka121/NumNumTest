@@ -2,13 +2,11 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    [SerializeField] private MeshRenderer _meshRenderer;
+    public Color GetColor => _meshRenderer.material.color;
 
-    void Update()
+    public void SetMaterial(Material material)
     {
-        
+        _meshRenderer.material = material;
     }
 }

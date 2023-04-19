@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a26f8e0cd60b9449a7771d4032d29b, type: 3}
   m_Name: TestBoard
   m_EditorClassIdentifier: 
-  Columns: 4
-  Rows: 6
-  Board: []
+  columns: 4
+  rows: 5
+  bricks:
+  - position: {x: 0, y: 0}
+    count: 5
+  - position: {x: 1, y: 2}
+    count: 3
+  - position: {x: 2, y: 2}
+    count: 6
+  - position: {x: 1, y: 3}
+    count: 3
+  - position: {x: 3, y: 4}
+    count: 3

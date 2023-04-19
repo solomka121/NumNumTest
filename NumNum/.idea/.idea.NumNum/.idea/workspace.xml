@@ -4,15 +4,18 @@
     <list default="true" id="f01dbfdb-e4dd-4858-9db3-57b592fa812e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NumNum/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NumNum/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NumNum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NumNum/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/Materials/Concrete.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/Materials/Concrete.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/Materials/Brick.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Design/Materials/Brick.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Brick.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BricksPile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BricksPile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/TestBoard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/TestBoard.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BricksStack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BricksStack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Brick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Brick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BricksPile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BricksPile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameField.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +27,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BricksPile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Addons/Scripts/FTween.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FieldController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SelectionOutline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoardData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../WordDecor/WordDecor/Assets/Scripts/GameEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Brick.cs" root0="FORCE_HIGHLIGHTING" />
@@ -32,16 +37,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/BoardData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bricks.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LettersField.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BricksStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BoardTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BricksPile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GridGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BoardData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SelectionOutline.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Brick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameField.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MaterialsPallet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FieldController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BricksPile.cs" />
       </list>
     </option>
   </component>
@@ -86,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681816475879</updated>
-      <workItem from="1681816507273" duration="21441000" />
+      <workItem from="1681816507273" duration="42747000" />
     </task>
     <servers />
   </component>
@@ -103,9 +112,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="638" y="253" width="644" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1681837177298" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1681838640913">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1681867738299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1681838640913" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1681867738299" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1681863689481">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1681863689481" />
   </component>
 </project>

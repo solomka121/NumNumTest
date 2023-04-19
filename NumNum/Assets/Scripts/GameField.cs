@@ -8,19 +8,18 @@ public class GameField : MonoBehaviour
     [SerializeField] private BoardData _boardData;
     [SerializeField] private BoardTile _tilePrefab;
     [SerializeField] private BricksPile _bricksPilePrefab;
+    [SerializeField] private MaterialsPallet _materialsPallet;
     
-    [SerializeField] private float tilesOffset;
+    public float tilesOffset;
     [SerializeField] private float _wallsPadding = 1;
     
     public BoardTile[,] Grid;
 
     public void Init()
     {
-        Grid = new BoardTile[_boardData.Columns, _boardData.Rows];
+        Grid = new BoardTile[_boardData.columns, _boardData.rows];
         SpawnGrid();
-        Grid[2, 2].bricks = Instantiate(_bricksPilePrefab , Grid[2, 2].transform);
-        Grid[2, 2].isEmpty = false;
-        Grid[2, 2].bricks.Init();
+        SpawnBricksPiles();
     }
 
     private void SpawnGrid()
@@ -35,12 +34,12 @@ public class GameField : MonoBehaviour
 
             Vector3 currentPosition = -firstTilePosition;
 
-            for (int z = 0; z < _boardData.Rows; z++)
+            for (int z = 0; z < _boardData.rows; z++)
             {
                 currentPosition.z += TileSize.z / 2;
                 currentPosition.x = -firstTilePosition.x;
                 
-                for (int x = 0; x < _boardData.Columns; x++)
+                for (int x = 0; x < _boardData.columns; x++)
                 {
                     currentPosition.x += TileSize.x / 2;
                     
@@ -61,13 +60,28 @@ public class GameField : MonoBehaviour
         }
     }
 
+    private void SpawnBricksPiles()
+    {
+        for (int i = 0; i < _boardData.bricks.Length; i++)
+        {
+            Vector2Int position = _boardData.bricks[i].position;
+            BoardTile tile = Grid[position.x, position.y];
+            
+            tile.bricks = Instantiate(_bricksPilePrefab , tile.transform);
+            tile.bricks.count = _boardData.bricks[i].count;
+            tile.bricks.mainMaterial = _materialsPallet.GetUniqueMaterial();
+            tile.isEmpty = false;
+            tile.bricks.Init();
+        }
+    }
+
     private Vector3 GetFieldSize(Vector3 tileSize)
     {
         Vector3 size = new Vector3();
 
-        size.x = _boardData.Columns * tileSize.z + tilesOffset * (_boardData.Columns - 1);
+        size.x = _boardData.columns * tileSize.z + tilesOffset * (_boardData.columns - 1);
         size.y = 1;
-        size.z = _boardData.Rows * tileSize.x + tilesOffset * (_boardData.Rows - 1);
+        size.z = _boardData.rows * tileSize.x + tilesOffset * (_boardData.rows - 1);
 
         return size;
     }
@@ -101,7 +115,7 @@ public class GameField : MonoBehaviour
         if(_boardData == null)
             return;
         
-        if(_boardData.Columns <= 0 || _boardData.Rows <= 0)
+        if(_boardData.columns <= 0 || _boardData.rows <= 0)
             return;
 
         Vector3 startPoint = transform.localPosition;
