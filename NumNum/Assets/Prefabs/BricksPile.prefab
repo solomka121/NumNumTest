@@ -50,7 +50,8 @@ MonoBehaviour:
   _counterOffset: 0.05
   _decomposeTileTime: 0.26
   _decomposeJumpHeight: 0.2
-  _composeTileDelay: 0.36
+  _composeTileTime: 0.3
+  _composeTileDelay: 0.4
   _counter: {fileID: 7675037262406208336}
   mainMaterial: {fileID: 0}
   count: 4

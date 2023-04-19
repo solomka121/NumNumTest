@@ -55,6 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df41245b8243c347a8e00c801edece9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bricks: {fileID: 0}
+  isEmpty: 1
+  positionOnGrid: {x: 0, y: 0}
 --- !u!135 &4032720396261734215
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -66,7 +69,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.42
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8681315950591041187
 GameObject:

@@ -12,6 +12,7 @@ public class BricksPile : MonoBehaviour
 
     [SerializeField] private float _decomposeTileTime = 0.2f;
     [SerializeField] private float _decomposeJumpHeight = 0.6f;
+    [SerializeField] private float _composeTileTime = 0.2f;
     [SerializeField] private float _composeTileDelay = 0.1f;
     
     [SerializeField] private TMP_Text _counter;
@@ -117,18 +118,19 @@ public class BricksPile : MonoBehaviour
 
         while (flyProgress < targetTime)
         {
-            for (int brick = 0; brick < _bricks.Count; brick++)
+            for (int brick = 1; brick < _bricks.Count; brick++)
             {
                 Vector3 startPosition = _bricks[brick].transform.localPosition;
                 Vector3 targetPosition = GetPositionForBrick(brick + 1);
             
                 Vector3 lerpPosition;
                 lerpPosition = Vector3.Lerp(startPosition, targetPosition, FTween.InOutCubic(flyProgress - brick * _composeTileDelay));
+                lerpPosition.y += FTween.JumpSine(flyProgress - brick * _composeTileDelay) * _decomposeJumpHeight;
 
                 _bricks[brick].transform.localPosition = lerpPosition;
             }
 
-            flyProgress += Time.deltaTime * (1 / _decomposeTileTime);
+            flyProgress += Time.deltaTime * (1 / _composeTileTime);
             yield return null;
         }
         
